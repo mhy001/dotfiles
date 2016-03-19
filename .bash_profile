@@ -23,7 +23,7 @@ black="\e[0;30m";
 blue="\033[01;34m";
 cyan="\033[01;36m";
 green="\033[01;32m";
-purple="\e[0;35m";
+purple="\033[01;35m";
 red="\e[0;31m";
 violet="\e[0;35m";
 white="\e[0;37m";
@@ -33,7 +33,7 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-PS1="\[${green}\]\u@\h \[${yellow}\]\w \[${cyan}\]\$(parse_git_branch)\[${blue}\]\n$ \[${reset}\]"
+PS1="\[${green}\]\u@\h \[${blue}\]\w \[${cyan}\]\$(parse_git_branch)\[${purple}\]\n$ \[${reset}\]"
 export PS1
 
 # enable color support of ls and also handy aliases
