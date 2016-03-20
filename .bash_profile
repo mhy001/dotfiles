@@ -1,3 +1,7 @@
+# handy cd aliases
+alias ..='cd ..'
+alias project='cd ~/Desktop/Projects/Temp'
+
 # alias vi as vim
 alias vi=vim
 
@@ -10,9 +14,6 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 # clearing bash history
 alias clearHistory='history -c && rm -f ~/.bash_history'
-
-# go to current project
-alias project='cd ~/Desktop/Projects/Temp'
 
 # connect to raspberrypi
 alias accessPi='ssh pi@xxx.xxx.x.xx'
