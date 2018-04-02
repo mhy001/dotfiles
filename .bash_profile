@@ -1,11 +1,10 @@
 # handy cd aliases
 alias ..='cd ..'
-alias project='cd ~/Desktop/Projects/Temp'
 
 # alias vi as vim
 alias vi=vim
 
-# alias hub as git
+# alias git as hub
 alias git=hub
 
 # showing/hidding hidden files
@@ -16,7 +15,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias clearHistory='history -c && rm -f ~/.bash_history'
 
 # connect to raspberrypi
-alias accessPi='ssh pi@xxx.xxx.x.xx'
+#alias accessPi='ssh pi@192.168.0.195'
 
 # customize bash prompt
 reset="\e[0m";
@@ -31,7 +30,7 @@ white="\e[0;37m";
 yellow="\033[01;33m";
 
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 PS1="\[${green}\]\u@\h \[${blue}\]\w \[${cyan}\]\$(parse_git_branch)\[${purple}\]\n$ \[${reset}\]"
@@ -40,7 +39,7 @@ export PS1
 # enable color support of ls and also handy aliases
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxhxhxhxhxcxcx
-alias ls='ls -GF' #OSX only
+alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
