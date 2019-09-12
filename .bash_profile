@@ -1,21 +1,12 @@
 # handy cd aliases
 alias ..='cd ..'
-
-# alias vi as vim
+alias ...='cd ../..'
 alias vi=vim
-
-# alias git as hub
 alias git=hub
-
-# showing/hidding hidden files
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias bat='bat --show-all'
 
 # clearing bash history
 alias clearHistory='history -c && rm -f ~/.bash_history'
-
-# connect to raspberrypi
-#alias accessPi='ssh pi@192.168.0.195'
 
 # customize bash prompt
 reset="\e[0m";
@@ -28,11 +19,9 @@ red="\e[0;31m";
 violet="\e[0;35m";
 white="\e[0;37m";
 yellow="\033[01;33m";
-
 parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
 PS1="\[${green}\]\u@\h \[${blue}\]\w \[${cyan}\]\$(parse_git_branch)\[${purple}\]\n$ \[${reset}\]"
 export PS1
 
@@ -43,4 +32,9 @@ alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+# bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
